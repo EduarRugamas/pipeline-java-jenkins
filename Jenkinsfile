@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn package'
+        sh 'sudo mvn package'
       }
     }
 
@@ -15,7 +15,7 @@ pipeline {
 
     stage('Deliver') {
       steps {
-        sh 'echo \'Deliver success\''
+        sh 'sudo ./jenkins/scripts/deliver.sh'
       }
     }
 
